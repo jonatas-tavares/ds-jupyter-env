@@ -1,0 +1,18 @@
+version: '3' 
+services:
+
+  jupiter-nootebook:
+    image: fjardim/jupyter-spark
+    hostname: spark
+    container_name: spark
+    command: notebook
+    #env_file:
+    ports:
+      - 8888:8888
+    volumes:
+       - ./data/notebooks:/mnt/notebooks/ #alterar
+    #environment:
+    deploy:
+      resources:
+        limits:
+          memory: 1g
