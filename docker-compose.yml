@@ -1,17 +1,19 @@
 version: '3' 
 services:
 
-  jupiter-nootebook:
-    image: fjardim/jupyter-spark
-    hostname: spark
-    container_name: spark
-    command: notebook
+  jupyter-notebook:
+    image: jontavpess/ds-jupyter-env:1.0
+    hostname: jupyter
+    container_name: jupyter
+    #command: notebook
     #env_file:
+    #  - ./data/jupyter/jupyter.env
     ports:
       - 8888:8888
     volumes:
        - ./data/notebooks:/mnt/notebooks/ #alterar
     #environment:
+    #working_dir: /mnt/notebook/ #Não funcionou como o esperado
     deploy:
       resources:
         limits:
