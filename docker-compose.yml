@@ -2,18 +2,18 @@ version: '3'
 services:
 
   jupyter-notebook:
-    image: jontavpess/ds-jupyter-env:1.0
-    hostname: jupyter
-    container_name: jupyter
+    image: jontavpess/ds-jupyter-env
+    hostname: jupyter-notebook
+    container_name: jupyter-notebook
     #command: notebook
     #env_file:
     #  - ./data/jupyter/jupyter.env
     ports:
       - 8888:8888
     volumes:
-       - ./data/notebooks:/mnt/notebooks/ #alterar
+       - ./data:/mnt/data/ #alterar
     #environment:
-    #working_dir: /mnt/notebook/ #Não funcionou como o esperado
+    #working_dir: /mnt/notebook/
     deploy:
       resources:
         limits:
