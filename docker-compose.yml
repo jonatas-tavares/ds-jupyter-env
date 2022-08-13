@@ -11,7 +11,7 @@ services:
     ports:
       - 8888:8888
     volumes:
-       - ./data:/mnt/data/ #alterar
+       - ./data:/mnt/data/
     #environment:
     #working_dir: /mnt/notebook/
     deploy:
